@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #282c34, #1c1f24);
+    color: #ffffff;
+    perspective: 1000px;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .glowing-text {
+    font-size: 3rem;
+    color: #ff6f61;
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+  }
+  
+  .category {
+    margin: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transform: rotateY(10deg);
+    transition: transform 0.5s;
+  }
+  
+  .category:hover {
+    transform: rotateY(0);
+  }
+  
+  .problem-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .problem-list li {
+    margin: 0.5rem 0;
+    transition: transform 0.3s;
+  }
+  
+  .problem-list li:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 5px #00ffab;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  

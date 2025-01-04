@@ -1,0 +1,99 @@
+body {
+    background: linear-gradient(120deg, #a6c0fe, #f68084);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Ensure no margin around the body */
+}
+
+.container {
+    perspective: 1000px;
+}
+
+.form-box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    transform: rotateY(-15deg) translateZ(50px);
+    width: 100%; /* Make the form box responsive */
+    max-width: 400px; /* Limit the width on larger screens */
+    transition: transform 0.5s ease;
+}
+
+.form-box:hover {
+    transform: rotateY(0deg) translateZ(0);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+}
+
+form div {
+    margin-bottom: 20px; /* Add space between form fields */
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;  /* Ensure input fields take full width of the container */
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+}
+
+.btn {
+    background: #f68084;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;  /* Make button take full width */
+}
+
+.btn:hover {
+    background: #ff5f7e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .form-box {
+        padding: 15px;  /* Less padding on smaller devices */
+        width: 90%;  /* Make the form box take more space on smaller devices */
+    }
+
+    h2 {
+        font-size: 20px; /* Slightly smaller text on small screens */
+    }
+
+    .btn {
+        font-size: 16px; /* Smaller button text on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .form-box {
+        width: 100%; /* Full width for very small devices */
+        padding: 10px;  /* Minimal padding on very small devices */
+    }
+
+    h2 {
+        font-size: 18px; /* Even smaller text on the smallest screens */
+    }
+
+    .btn {
+        font-size: 14px; /* Adjust button text size for small devices */
+    }
+}

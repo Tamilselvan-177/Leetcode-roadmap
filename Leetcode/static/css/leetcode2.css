@@ -1,0 +1,223 @@
+/* Body background with gradient */
+body {
+  background: linear-gradient(120deg, #a6c0fe, #f68084);
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Changed to flex-start for better alignment */
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width/height */
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: black;
+  transition: color 0.3s, text-shadow 0.3s; /* Smooth color and text-shadow transition */
+}
+
+header h1:hover {
+  color: #007bff; /* Color change on hover */
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Glowing effect */
+}
+
+header p {
+  font-size: 1.2rem;
+  color: black;
+  transition: color 0.3s;
+}
+
+header p:hover {
+  color: #007bff; /* Color change on hover */
+}
+
+/* Goal Tracker Section */
+.goal-tracker {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+.goal-tracker p {
+  margin: 5px 0;
+}
+
+/* Main Section */
+/* Main Section */
+main {
+  width: 100%;
+  max-width: 1700px; /* Increased max-width for more horizontal space */
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 90%; /* Increased max-width for better responsiveness */
+  margin: 15px auto; /* Adjusted margin for spacing */
+}
+
+
+/* Category Sections */
+.category {
+  margin-bottom: 40px; /* Increased bottom margin for better spacing */
+}
+
+.category h2 {
+  margin-bottom: 15px; /* Adjusted margin */
+  font-size: 1.8rem;
+  color: #333;
+  border-bottom: 2px solid #f68084;
+  display: inline-block;
+  padding-bottom: 10px; /* Added padding to create space between text and border */
+  transition: color 0.3s, border-color 0.3s; /* Smooth color and border transition */
+}
+
+.category h2:hover {
+  color: #007bff; /* Color change on hover */
+  border-color: #007bff; /* Border color change on hover */
+}
+
+/* Problem Checkbox and Label Styling */
+.problems {
+  margin-top: 15px;
+}
+
+.problem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Increased margin for more space */
+}
+
+.problem input[type="checkbox"] {
+  margin-right: 15px; /* Increased margin for better spacing */
+  transform: scale(1.3); /* Slightly increased checkbox size for better accessibility */
+}
+
+.problem label a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500; /* Made link text a bit bolder */
+  transition: color 0.3s, text-decoration 0.3s; /* Smooth color and underline transition */
+}
+
+.problem label a:hover {
+  color: #0056b3;
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px; /* Increased max-width for better responsiveness */
+  margin: 15px auto; /* Adjusted margin for spacing */
+}
+
+.progress-bar {
+  height: 25px; /* Increased height for better visibility */
+  background-color: #76c7c0;
+  text-align: center;
+  line-height: 25px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.5s ease;
+}
+
+/* Difficulty Breakdown */
+.difficulty-breakdown {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.difficulty-breakdown ul {
+  list-style: none;
+  padding: 0;
+}
+
+.difficulty-breakdown li {
+  margin: 8px 0; /* Increased margin for better spacing */
+}
+
+/* Difficulty Labels */
+.difficulty-label {
+  display: inline-block;
+  padding: 4px 10px; /* Increased padding for better readability */
+  border-radius: 5px;
+  font-size: 14px; /* Increased font size for better legibility */
+  font-weight: bold;
+  margin-left: 12px; /* Increased margin for better spacing */
+  color: white;
+  text-transform: capitalize;
+}
+
+.difficulty-label.easy {
+  background-color: #28a745; /* Slightly adjusted color */
+}
+
+.difficulty-label.medium {
+  background-color: #ffc107; /* Slightly adjusted color */
+  color: black;
+}
+
+.difficulty-label.hard {
+  background-color: #dc3545; /* Slightly adjusted color */
+}
+
+/* Logout Button */
+.logout-button {
+  text-decoration: none;
+  color: #dc3545;
+  font-weight: bold;
+  margin-left: 15px;
+  padding: 8px 16px; /* Added padding for better button appearance */
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.logout-button:hover {
+  color: #fff;
+  background-color: #c82333;
+  transform: scale(1.1); /* Slightly increased size on hover */
+}
+
+/* Navigation Links */
+.nav-links li a {
+  font-size: 1.1rem;
+  color: #333;
+  transition: color 0.3s, text-decoration 0.3s; /* Smooth color and underline transition */
+}
+
+.nav-links li a:hover {
+  color: #f68084;
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* General Button and Link Hover Effects */
+button, a {
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth opacity and transformation */
+}
+
+button:hover, a:hover {
+  opacity: 0.9; /* Slightly reduced opacity */
+  transform: translateY(-2px); /* Slightly raised effect on hover */
+}

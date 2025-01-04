@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode Problem Roadmap</title>
+  {% load static %}
+
+  <link rel="stylesheet" href="../static/css/leetcode2.css">
+</head>
+<body>
+
+
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <header>
+      <h1>LeetCode Roadmap</h1>
+      <p>From Beginner to Advanced - A Futuristic Problem Solving Journey</p>
+
+      <!-- Dashboard with Username and Logout -->
+      <div class="dashboard">
+        <span class="username">{{ username }}</span> <!-- Display Username -->
+        <a href="{% url 'logout' %}" class="logout-button">Logout</a> <!-- Logout Link -->
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar-container">
+        <div class="progress-bar" style="width: {{ progress_percentage }}%;"></div>
+      </div>
+      <p>{{ completed_problems }} out of {{ total_problems }} problems completed ({{ progress_percentage|floatformat:1 }}%)</p>
+      
+      <!-- Difficulty Breakdown -->
+      <div class="difficulty-breakdown">
+        <h3>Progress by Difficulty:</h3>
+        <ul>
+          {% for difficulty, stats in difficulty_progress.items %}
+          <li>
+            {{ difficulty }}: {{ stats.completed }} / {{ stats.total }} completed
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </header>
+
+    <!-- Category Sections -->
+    <main>
+      <section class="category">
+        <h2>Array Problems</h2>
+        <div class="problems">
+          {% for problem in array_problems %}
+          <div class="problem">
+            <input type="checkbox" id="array{{ problem.id }}" {% if problem.completed %}checked{% endif %}
+                   onchange="updateProblemStatus({{ problem.id }}, this.checked)">
+            <label for="array{{ problem.id }}">
+              <a href="{{ problem.link }}" target="_blank" class="problem-link">{{ problem.title }}</a>
+            </label>
+            <span class="difficulty-label {{ problem.difficulty|lower }}">{{ problem.difficulty }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- <section class="category">
+        <h2>String Problems</h2>
+        <div class="problems">
+          {% for problem in string_problems %}
+          <div class="problem">
+            <input type="checkbox" id="string{{ problem.id }}" {% if problem.completed %}checked{% endif %}
+                   onchange="updateProblemStatus({{ problem.id }}, this.checked)">
+            <label for="string{{ problem.id }}">
+              <a href="{{ problem.link }}" target="_blank" class="problem-link">{{ problem.title }}</a>
+            </label>
+            <span class="difficulty-label {{ problem.difficulty|lower }}">{{ problem.difficulty }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section> -->
+
+      <section class="category">
+        <h2>Binary Search Problems</h2>
+        <div class="problems">
+          {% for problem in binary_search_problems %}
+          <div class="problem">
+            <input type="checkbox" id="binary_search{{ problem.id }}" {% if problem.completed %}checked{% endif %}
+                   onchange="updateProblemStatus({{ problem.id }}, this.checked)">
+            <label for="binary_search{{ problem.id }}">
+              <a href="{{ problem.link }}" target="_blank" class="problem-link">{{ problem.title }}</a>
+            </label>
+            <span class="difficulty-label {{ problem.difficulty|lower }}">{{ problem.difficulty }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Linked List Problems</h2>
+        <div class="problems">
+          {% for problem in linked_list_problems %}
+          <div class="problem">
+            <input type="checkbox" id="linked_list{{ problem.id }}" {% if problem.completed %}checked{% endif %}
+                   onchange="updateProblemStatus({{ problem.id }}, this.checked)">
+            <label for="linked_list{{ problem.id }}">
+              <a href="{{ problem.link }}" target="_blank" class="problem-link">{{ problem.title }}</a>
+            </label>
+            <span class="difficulty-label {{ problem.difficulty|lower }}">{{ problem.difficulty }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Two Pointers Problems</h2>
+        <div class="problems">
+          {% for problem in two_pointers_problems %}
+          <div class="problem">
+            <input type="checkbox" id="two_pointers{{ problem.id }}" {% if problem.completed %}checked{% endif %}
+                   onchange="updateProblemStatus({{ problem.id }}, this.checked)">
+            <label for="two_pointers{{ problem.id }}">
+              <a href="{{ problem.link }}" target="_blank" class="problem-link">{{ problem.title }}</a>
+            </label>
+            <span class="difficulty-label {{ problem.difficulty|lower }}">{{ problem.difficulty }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <script>
+    function updateProblemStatus(problemId, completed) {
+      fetch(`leetcode/update-problem-status/${problemId}/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': '{{ csrf_token }}',
+        },
+        body: JSON.stringify({ completed: completed })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('Problem status updated!');
+        } else {
+          alert('Failed to update problem status.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while updating the problem status.');
+      });
+    }
+  </script>
+
+</body>
+</html>
